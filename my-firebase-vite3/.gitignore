@@ -26,4 +26,6 @@ dist-ssr
 # Ignore build output
 dist/
 build/
+.env
+
 
