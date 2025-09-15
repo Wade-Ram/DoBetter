@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="html9">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service</title>
+  <link rel="stylesheet" href="public/style.css">
+ 
+</head>
+<body>
+     <header class="site-header">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="#" class="logo">DoBetter</a>
+
+    <!-- Menu toggle (mobile only) -->
+    <button class="nav-toggle" id="menuBtn">
+      <img src="image/menu_27dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+    </button>
+    
+
+    <!-- Navigation Links -->
+    <nav class="navbar" id="navLinks">
+      <button class="nav-toggle hidden" id="closeBtn">
+      <img src="image/close_28dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+      </button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a id="user-status" href="profile.html">Not logged in</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <div class="terms-container">
+    <h1>Terms of Service</h1>
+    <p><strong>Effective Date:</strong>22/08/25</p>
+
+    <p>Welcome to DoBetter By accessing or using our website, you agree to comply with and be bound by the following terms and conditions. Please read them carefully.</p>
+
+    <h2>1. Use of Our Website</h2>
+    <p>You may use our website and resources for personal, educational purposes only. You may not:</p>
+    <ul>
+      <li>Use the website for commercial purposes without our permission.</li>
+      <li>Engage in any activity that may disrupt or interfere with the website.</li>
+    </ul>
+
+    <h2>2. User Accounts</h2>
+    <p>To access certain features, such as downloading resources or saving progress, you may need to create an account. You are responsible for maintaining the confidentiality of your account credentials. You agree to notify us immediately of any unauthorized use of your account.</p>
+
+    <h2>4. Privacy</h2>
+    <p>Your use of the website is also governed by our <a href="privacypol.html">Privacy Policy</a>. Please review it to understand how we collect, use, and protect your information.</p>
+
+    <h2>5. Third-Party Links</h2>
+    <p>Our website may contain links to third-party websites. We are not responsible for the content, privacy practices, or actions of these third parties. Use these links at your own risk.</p>
+
+    <h2>6. Disclaimer of Warranties</h2>
+    <p>The website and all content are provided “as is” without warranties of any kind, either express or implied. We do not guarantee that the website will be uninterrupted or error-free, or that the resources meet your specific needs.</p>
+
+    <h2>7. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by law, [Your Website Name] will not be liable for any indirect, incidental, or consequential damages arising from your use of the website or inability to access the resources.</p>
+
+    <h2>8. Changes to Terms</h2>
+    <p>We may update these Terms of Service from time to time. Any changes will be posted on this page with the updated effective date. Your continued use of the website constitutes acceptance of the updated terms.</p>
+
+    <h2>9. Contact Us</h2>
+    <p>If you have any questions or concerns about these Terms of Service, please contact us at:</p>
+    <p>📧 Email: <strong>ultimatecool901@gmail.com</strong><br>
+       🌐 Website: <strong>DoBetter</strong></p>
+  </div>
+      <script>
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.style.display = 'block';
+    menuBtn.classList.add('hidden');
+    closeBtn.classList.remove('hidden');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    navLinks.style.display = 'none';
+    closeBtn.classList.add('hidden');
+    menuBtn.classList.remove('hidden');
+  });
+</script>
+<script type="module" src="src/auth.js"></script>
+</body>
+</html>

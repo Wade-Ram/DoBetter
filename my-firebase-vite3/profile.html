@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoBetter</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="#" class="logo">DoBetter</a>
+      <button class="nav-toggle" id="menuBtn">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAAAXNSR0IArs4c6QAAAG1JREFUSEtjZKAjYKSjXQyjllEltEdIMD5+/Hg/AwODA1XCDGLIAVlZWUeYeSjBSFfLqOgjrEaNnAQygYGBQZ+KwXlRVla2YOATyOPHj+nnMyoG3whPjaPFFVlpaYQUV2SFDQmaRoORhMDCrRQAI1UjHFxvSvMAAAAASUVORK5CYII=" />
+      </button>
+      <nav class="navbar" id="navLinks">
+        <button class="nav-toggle hidden" id="closeBtn">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAMpJREFUSEvtldEJwzAMRBPQAO0Ahmr/oRTwAO0AghZ9GBJjO6eQinzEn+Z0j5Nle56C1xzMm27g6R2/TktF5EVEoqpPZv4gUUXkQURvVWVmXlo13YQ5528pQKAFVmpSSk3vLrA2GEE92uEZIkaIZt3a3aEZGXphBt4FmqhlbPs2IJ5zhoEt6LpNyFAVPZSwiOuktu+BuRL2Uv4N2ErnPT84YejQhF4L5J4hGujie4w82ks93rHfE/L/HdG4XpojgLrmBp7RxY1HeEt/5O3QHVYRlhcAAAAASUVORK5CYII=" />
+        </button>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a id="user-status" href="profile.html">Not logged in</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="profile-main">
+    <div class="profile-card">
+      <div class="profile-pic-container">
+        <img src="/image/avatar.png" alt="Profile Picture" class="profile-pic">
+      </div>
+      <div class="profile-info">
+        <!-- Profile Info Fields -->
+        <h2>Student Profile</h2>
+        <p><strong>Name:</strong> <span id="profileName"></span>
+          <input type="text" id="editName" style="display:none;" />
+        </p>
+        <p><strong>Email:</strong> <span id="profileEmail"></span></p>
+        <p><strong>Age:</strong> <span id="profileAge"></span>
+          <input type="number" id="editAge" style="display:none;" />
+        </p>
+        <p><strong>Grade:</strong> <span id="profileGrade"></span>
+          <input type="text" id="editGrade" style="display:none;" />
+        </p>
+        <p><strong>Subjects:</strong> <span id="profileSubjects"></span>
+          <input type="text" id="editSubjects" style="display:none;" placeholder="Comma-separated" />
+        </p>
+        <button id="editBtn">Edit</button>
+        <button id="saveBtn" style="display:none;">Save</button>
+
+        <h3>Progress</h3>
+        <div id="profileProgress"></div>
+      </div>
+    </div>
+
+    <section class="profile-card">
+      <h3>Welcome Note</h3>
+      <p>
+        Welcome to your student profile! Here you can view your enrolled subjects, track your progress, 
+        and access resources for your grade. Make sure to check back regularly for updates and downloadable materials.
+      </p>
+    </section>
+  </main>
+
+  <!-- Menu Toggle Script -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const closeBtn = document.getElementById('closeBtn');
+    const navLinks = document.getElementById('navLinks');
+
+    menuBtn.addEventListener('click', () => {
+      navLinks.style.display = 'block';
+      menuBtn.classList.add('hidden');
+      closeBtn.classList.remove('hidden');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      navLinks.style.display = 'none';
+      closeBtn.classList.add('hidden');
+      menuBtn.classList.remove('hidden');
+    });
+  </script>
+
+  <!-- Vite-bundled Profile JS -->
+  <script type="module" src="/src/auth.js"></script>
+  <script type="module" src="/src/profile.js"></script>
+  <script type="module" src="src/signup.js"></script>
+</body>
+</html>
+
+
+

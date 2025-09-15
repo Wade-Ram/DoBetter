@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoBetter Blog</title>
+  <link rel="stylesheet" href="public/style.css">
+  
+</head>
+<body class="body9">
+  
+  <header class="site-header">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="#" class="logo">DoBetter</a>
+    
+    <!-- Menu toggle (mobile only) -->
+    <button class="nav-toggle" id="menuBtn">
+      <img src="image/menu_27dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+    </button>
+    
+
+    <!-- Navigation Links -->
+    <nav class="navbar" id="navLinks">
+      <button class="nav-toggle hidden" id="closeBtn">
+      <img src="image/close_28dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+      </button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <!--- <li><a href="#">Certificate</a></li> ---Certificate page----> 
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a id="user-status" href="profile.html">Not logged in</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+
+   <h1 class="blog-header">📚 DoBetter Blog</h1>
+    <p class="blog-para">Tips, tricks, and stories to help you study smarter.</p>
+
+  <!-- Blog Articles -->
+  <section class="blog-container">
+
+    <!-- Article 1 -->
+    <article class="blog-card">
+      <img src="image/DoBetter01.jpg" alt="Origin of DoBetter">
+      <div class="blog-content">
+        <h2>DoBetter's Origin</h2>
+        <p>Learn how DoBetter came about and it's purpose</p>
+        <a href="article1.html" class="read-more">Read More</a>
+      </div>
+    </article>
+
+     <!-- Article 2 --> <!---
+    <article class="blog-card">
+      <img src="images/exam-prep.jpg" alt="Exam Preparation">
+      <div class="blog-content">
+        <h2>How to Prepare for Exams Without Stress</h2>
+        <p>Exams don’t have to be scary. Here’s a step-by-step guide to prepare smart and stay confident...</p>
+        <a href="article2.html" class="read-more">Read More</a>
+      </div>
+    </article> --->
+
+    <!-- Article 3 --> <!----
+    <article class="blog-card">
+      <img src="images/time-management.jpg" alt="Time Management">
+      <div class="blog-content">
+        <h2>Time Management for Busy Students</h2>
+        <p>Balancing school, homework, and life? Discover how to create a timetable that works for you...</p>
+        <a href="article3.html" class="read-more">Read More</a>
+      </div>
+    </article>  ---->
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-blog">
+    <p>&copy; 2025 DoBetter. All Rights Reserved.</p>
+  </footer>
+
+      <script>
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.style.display = 'block';
+    menuBtn.classList.add('hidden');
+    closeBtn.classList.remove('hidden');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    navLinks.style.display = 'none';
+    closeBtn.classList.add('hidden');
+    menuBtn.classList.remove('hidden');
+  });
+</script>
+<script type="module" src="src/auth.js"></script>
+</body>
+</html>

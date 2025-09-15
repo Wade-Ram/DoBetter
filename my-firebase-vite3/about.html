@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>DoBetter</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="public/style.css">
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ 
+</head>
+<body class="body5">
+    <header class="site-header">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="#" class="logo">DoBetter</a>
+
+    <!-- Menu toggle (mobile only) -->
+    <button class="nav-toggle" id="menuBtn">
+      <img src="image/menu_27dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+    </button>
+    <!-- Navigation Links -->
+    <nav class="navbar" id="navLinks">
+      <button class="nav-toggle hidden" id="closeBtn">
+      <img src="image/close_28dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+      </button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <!----------Login---------------->
+        <li><a id="user-status" href="profile.html">Not logged in</a></li>
+
+      </ul>
+    </nav>
+  </div>
+</header>
+  <section class="about">
+    <div id="aboutus">
+      <h2>ABOUT US</h2>
+      <p> Welcome to DoBetter, here we offer a variety of subjects to students anywhere and everywhere.
+        We have created this website with many resources for students to access starting with grade 12.
+        We also coming up with a new feature which is certificates of completion and badges
+        which would help you gain more confidence and show off your skills to friends, family and those you want too.
+      </p>
+      <p>We offer assistance when needed so please feel free to send us a message on our email,
+        you can find our contact details in the contact section of our home page.
+      </p>
+      <p>Our goal is to make students substantially improve their grades and their overall performance with academic knowledge.
+        We believe that students always deserves a chance to improve themselves and showcase their hardwork
+      </p>
+      <p><strong>We can't wait to see you IMPROVE.....your academic friend the DoBetter team</strong></p>
+    </div>
+  </section>
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.style.display = 'block';
+    menuBtn.classList.add('hidden');
+    closeBtn.classList.remove('hidden');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    navLinks.style.display = 'none';
+    closeBtn.classList.add('hidden');
+    menuBtn.classList.remove('hidden');
+  });
+</script>
+<script type="module" src="src/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DoBetter - Subjects</title>
+  <link rel="stylesheet" href="public/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+</head>
+<body class="body3">
+  <header class="subj-header">
+    <div class="subj-nav-container">
+      <a href="dashboard.html" class="subj-logo">DoBetter</a>
+      
+      <button class="nav-toggle" id="menuBtn">
+      <img src="image/menu_27dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+    </button>
+    
+
+    <!-- Navigation Links -->
+    <nav class="navbar" id="navLinks">
+      <button class="nav-toggle hidden" id="closeBtn">
+      <img src="image/close_28dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+      </button>
+        <ul class="subj-nav-links">
+          <li><a href="subjects.html" class="active-link">Subjects</a></li>     
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#" class="subj-logout-btn" id="logout-btn">Logout</a></li>
+          <li><a id="user-status" href="profile.html">Not logged in</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="subj-main">
+    <h1 class="subj-page-title">Subjects</h1>
+
+    <!-- Grade Tabs -->
+    <div class="subj-tabs">
+      <button class="subj-tab-btn active" data-target="grade12">Grade 12</button>
+      <button class="subj-tab-btn" data-target="grade11">Grade 11</button>
+      <button class="subj-tab-btn" data-target="grade10">Grade 10</button>
+    </div>
+
+    <!-- Grade 12 Section -->
+    <section class="subj-tab-content active" id="grade12">
+      <h2 class="subj-section-title">Grade 12 Subjects</h2>
+
+      <!-- Language -->
+      <h3>ANALYTICAL SUBJECTS</h3>
+      <div class="subj-material-grid">
+        <div class="subj-material-card">
+          <h3><a href="math.html">Mathematic</a></h3>
+          <p>Mathematic Topics.</p>
+        </div>
+          <h3>THOERY SUBJECTS</h3>
+        <div class="subj-material-card">
+          <h3><a href="geography.html">Geography</a></h3>
+          <p>Geography Topics</p>
+        </div>
+      </div>
+      <div class="subj-material-grid">
+        <div class="subj-material-card">
+          <h3><a href="life-science.html">Life Science</a></h3>
+          <p>Life Science Topics</p>
+        </div>
+      </div>
+      <h3>LANGUAGE SUBJECTS</h3>
+      <div class="subj-material-grid">
+        <div class="subj-material-card">
+          <h3><a href="afrikaans.html">Afrikaans</a></h3>
+          <p>Afrikaans Topics</p>
+        </div>
+      </div>
+      <div class="subj-material-grid">
+        <div class="subj-material-card">
+          <h3><a href="english.html">English</a></h3>
+          <p>English Topics</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grade 11 Section -->
+    <section class="subj-tab-content" id="grade11">
+      <h2 class="subj-section-title">Grade 11 Subjects</h2>
+      <p>Content coming soon...</p>
+    </section>
+
+    <!-- Grade 10 Section -->
+    <section class="subj-tab-content" id="grade10">
+      <h2 class="subj-section-title">Grade 10 Subjects</h2>
+      <p>Content coming soon...</p>
+    </section>
+  </main>
+
+  <script>
+    // Tab switching
+    const tabButtons = document.querySelectorAll('.subj-tab-btn');
+    const tabContents = document.querySelectorAll('.subj-tab-content');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.target).classList.add('active');
+      });
+    });
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.style.display = 'block';
+    menuBtn.classList.add('hidden');
+    closeBtn.classList.remove('hidden');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    navLinks.style.display = 'none';
+    closeBtn.classList.add('hidden');
+    menuBtn.classList.remove('hidden');
+  });
+  </script>
+     <script type="module" src="src/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>DoBetter</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="public/style.css">
+  <meta name="google-site-verification" content="5bkoyuOuR33lt2BUwFlmSa7g0ejJccxTcntvAwr0zB8" />
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+</head>
+<body>
+   <header class="site-header">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="#" class="logo">DoBetter</a>
+
+    <!-- Menu toggle (mobile only) -->
+    <button class="nav-toggle" id="menuBtn">
+      <img src="image/menu_27dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+    </button>
+    
+
+    <!-- Navigation Links -->
+    <nav class="navbar" id="navLinks">
+      <button class="nav-toggle hidden" id="closeBtn">
+      <img src="image/close_28dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+      </button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <!--- <li><a href="#">Certificate</a></li> ---Certificate page----> 
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a id="user-status" href="profile.html">Not logged in</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+  <!-----------------main----------------'---->
+  <section class="main">
+  <h2 class="H2">Subjects</h2>
+  <div class="subjects-grid">
+    <div class="subject-card">
+      <h3>Math</h3>
+      <p>Master numbers, equations, and problem solving.</p>
+      <a href="math.html">Explore</a>
+    </div>
+    <div class="subject-card">
+      <h3>Life Science</h3>
+      <p>Understand the world of living organisms and biology.</p>
+      <a href="life-science.html">Explore</a>
+    </div>
+    <div class="subject-card">
+      <h3>Geography</h3>
+      <p>Discover earth, maps, and environmental science.</p>
+      <a href="geography.html">Explore</a>
+    </div>
+    <div class="subject-card">
+      <h3>English</h3>
+      <p>Improve grammar, writing, and reading skills.</p>
+      <a href="english.html">Explore</a>
+    </div>
+    <div class="subject-card">
+      <h3>Afrikaans</h3>
+      <p>Learn vocabulary, comprehension, and culture.</p>
+      <a href="afrikaans.html">Explore</a>
+    </div>
+  </div>
+</section>
+  <!--------------------msg------------------------->
+  <section class="msg">
+  <h2 class="msg-title">Why Choose DoBetter?</h2>
+  <div class="msg-grid">
+    <div class="msg-card">
+      <i class="fas fa-book-open"></i>
+      <p>Access resources anytime, anywhere, designed to improve your learning.</p>
+    </div>
+    <div class="msg-card">
+      <i class="fas fa-user-graduate"></i>
+      <p>Get subject assistance and tips to boost your marks with ease.</p>
+    </div>
+    <div class="msg-card">
+      <i class="fas fa-hand-pointer"></i>
+      <p>Join today for free – learning has never been this simple.</p>
+    </div>
+  </div>
+</section>
+  
+  <!----------------footer------------------>
+  <section class="footer-page">
+  <!-- Your website content here -->
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+
+      <!-- Brand -->
+      <div class="footer-section">
+        <h2 class="footer-logo">DoBetter</h2>
+        <p>
+          Building value, delivering quality, and connecting people worldwide.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Resources -->
+      <div class="footer-section">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="FAQS.html">FAQs</a></li>
+          <li><a href="privacypol.html">Privacy Policy</a></li>
+          <li><a href="termsofservice.html">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-section">
+        <h3>Get in Touch</h3>
+        <address>Email: ultimatecool901@gmail.com</address>
+        <address>Email: dobetter0111@gmail.com</address>
+        <div class="footer-socials">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="tiktok.com/@wade_rm"><i class="fab fa-tiktok"></i></a>
+          <a href="https://www.instagram.com/do_better_01?igsh=ZzhpZ2FmeDhlbzZh"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/in/wayden-ram-a508b4373?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      © <span id="year"></span> DoBetter. 2025 All rights reserved.
+    </div>
+  </footer>
+    
+    <script>
+        /*Menu bar*/
+    const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.style.display = 'block';
+    menuBtn.classList.add('hidden');
+    closeBtn.classList.remove('hidden');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    navLinks.style.display = 'none';
+    closeBtn.classList.add('hidden');
+    menuBtn.classList.remove('hidden');
+  });
+   </script>
+  </section>
+   <script type="module" src="src/auth.js"></script>
+</body>
+</html>

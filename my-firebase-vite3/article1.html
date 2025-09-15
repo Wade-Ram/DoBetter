@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>DoBetter</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="public/style.css">
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  
+</head>
+<body>
+   <header class="site-header">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="#" class="logo">DoBetter</a>
+
+    <!-- Menu toggle (mobile only) -->
+    <button class="nav-toggle" id="menuBtn">
+      <img src="image/menu_27dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+    </button>
+    
+
+    <!-- Navigation Links -->
+    <nav class="navbar" id="navLinks">
+      <button class="nav-toggle hidden" id="closeBtn">
+      <img src="image/close_28dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+      </button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <!--- <li><a href="#">Certificate</a></li> ---Certificate page----> 
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        
+        <li><a id="user-status" href="profile.html">Not logged in</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+  <section class="article">
+  <h1 class="H1-article">DoBetter's Origin</h1>
+    <img src="image/DoBetter01.jpg" alt="Origin of DoBetter">
+  <p>Once in classrooms all over South Africa, students were struggling quietly. 
+    Some were afraid to raise their hands in class, some didn’t have all the textbooks, and others just needed a little extra help after school.
+    But no matter how hard they tried, they always felt like something was missing.
+     That’s when DoBetter was born.</p>
+  <p>It wasn’t just another website with notes. It was created with one simple belief:
+     Every student deserves the chance to learn, grow, and succeed — anytime, anywhere.
+     On DoBetter, a student who once failed Math could find clear explanations, step-by-step resources, and practice that finally made sense.
+    A learner who hated Geography could discover fun, easy-to-understand notes and actually start to enjoy it.</p>
+  <p> A shy student who never spoke in class could quietly download resources, practice at home, and walk back into school with confidence.
+     It became more than just a website.</p>
+    <p> It became a friend in your pocket — the one that always had your back before an exam, during homework, or when teachers moved too fast in class.
+     And slowly, those students stopped doubting themselves. Their marks went up. Their confidence grew. They stopped saying, <strong>“I can’t,” and started saying, I’ll try.</strong>
+    Because with DoBetter, no one studies alone.</p>
+  </section>
+     <script>
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.style.display = 'block';
+    menuBtn.classList.add('hidden');
+    closeBtn.classList.remove('hidden');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    navLinks.style.display = 'none';
+    closeBtn.classList.add('hidden');
+    menuBtn.classList.remove('hidden');
+  });
+</script>
+  </section>
+  <script type="module" src="src/auth.js"></script>
+</body>
+</html>
+ 
