@@ -97,6 +97,22 @@
     </div>
   </div>
 </section>
+
+<section class="share-section">
+    <h2>Share DoBetter</h2>
+    <p>Help others learn smarter by sharing this app!</p>
+
+    <!-- Modern Web Share Button -->
+    <button id="shareBtn" class="share-button">Share This App</button>
+
+    <!-- Social Media Links -->
+    <div class="social-share">
+      <a href="https://wa.me/?text=Check%20out%20DoBetter!%20Learn%20smarter%20here:%20https://dobetter-98fbb.web.app" target="_blank">WhatsApp</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://dobetter-98fbb.web.app" target="_blank">Facebook</a>
+      <a href="https://twitter.com/intent/tweet?text=Check%20out%20DoBetter!%20Learn%20Smarter,%20Achieve%20More:%20https://dobetter-98fbb.web.app" target="_blank">X (Twitter)</a>
+    </div>
+  </section>
+
   
   <!----------------footer------------------>
   <section class="footer-page">
@@ -175,6 +191,29 @@
   });
    </script>
   </section>
+
+   <script>
+    const shareData = {
+      title: 'DoBetter - Learn Smarter, Achieve More',
+      text: 'Check out DoBetter, an educational platform for Math, Life Science, Geography, English, and more!',
+      url: 'https://dobetter-98fbb.web.app'
+    };
+
+    const btn = document.getElementById('shareBtn');
+
+    btn.addEventListener('click', async () => {
+      try {
+        if (navigator.share) {
+          await navigator.share(shareData);
+        } else {
+          alert('Sharing not supported on this browser. Copy this link: https://dobetter-98fbb.web.app');
+        }
+      } catch (err) {
+        console.error('Error sharing:', err);
+      }
+    });
+  </script>
+  
    <script type="module" src="src/auth.js"></script>
 </body>
 </html>
