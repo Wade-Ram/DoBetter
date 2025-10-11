@@ -49,9 +49,9 @@
   list-style: none;
 }
 
-.navbar ul li a {
+.navbar ul li a{
   text-decoration: none;
-  color: white;
+  color: navy;
   font-weight: 500;
   transition: color 0.3s ease;
 }
