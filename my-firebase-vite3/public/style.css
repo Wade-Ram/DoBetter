@@ -572,38 +572,8 @@ button{
   margin-bottom: 30px;
 }
 
-/* Tabs */
-/*.subj-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
-}
 
-.subj-tab-btn {
-  padding: 10px 20px;
-  background: #E5E7EB;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease;
-}
-
-.subj-tab-btn.active {
-  background: #34D399;
-  color: white;
-}
-
-.subj-tab-btn:hover {
-  background: #D1D5DB;
-}
-*/
-/* ================= Horizontal Scroll for Subject Tabs ================= */
-
-/* Make subject tabs scroll horizontally */
-/* ==== Horizontal Scroll for Subject Tabs ==== */
+/*Horizontal scroll feature added to subject page*/
 .subj-tabs {
   display: flex;
   gap: 15px;
