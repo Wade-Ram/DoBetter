@@ -1233,6 +1233,22 @@ html8, body{
   left: 100px;
 }
 
+@media(max-width: 768px){
+  .share-button{
+    width: 65%;
+    font-weight: 700;
+    font-family: sans-serif;
+    text-align: center;
+    position: relative;
+    left: 0.4rem;
+    padding: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 .share-button:hover {
   background-color: #0056b3;
 }
