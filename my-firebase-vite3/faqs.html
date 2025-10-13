@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html class="html7">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>DoBetter</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="public/style.css">
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="description" content="Frequently asked questions page in which it answers the most often asked questions">
+</head>
+<body>
+   <header class="site-header">
+  <div class="nav-container">
+    <!-- Logo -->
+      <a href="#"><img src="public/image/Confident Logo for Educational Brand (4).png" class="logo"/></a>
+
+    <!-- Menu toggle (mobile only) -->
+    <button class="nav-toggle" id="menuBtn">
+      <img src="image/menu_27dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+    </button>
+    
+    <!-- Navigation Links -->
+    <nav class="navbar" id="navLinks">
+      <button class="nav-toggle hidden" id="closeBtn">
+      <img src="image/close_28dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+      </button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <li><a href="#">Resources</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="profile.html">Profile</a></li>
+
+        <li><a id="user-status" href="profile.html">Not logged in</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</header>
+  <!-----------FAQS------------‐----->
+  <h2 class="faq-h2">FREQUENTLY ASKED QUESTIONS</h2>
+  <div id="faq-qna">
+    <h3>How do i create an accont</h3>
+    <p>Go to the Login section click on the sign up button and fill in your details</p>
+  </div>
+  <div id="faq-qna">
+    <h3>Is the website free</h3>
+    <p>Most resources are free. Some premium notes and material will require purchase </p>
+  </div>
+  <div id="faq-qna">
+    <h3>What is the website about</h3>
+    <p>This website gives students learning material, resources for different grades and subjects </p>
+  </div>
+  <div id="faq-qna">
+    <h3>Can i also upload resources</h3>
+    <p>Short answer yes</p>
+  </div>
+  <div id="faq-qna">
+    <h3>Who do i contact if i have a problem</h3>
+    <p>Go to the contact page and send us a message at ultimatecool901@gmail.com</p>
+  </div>
+      <script>
+  const menuBtn = document.getElementById('menuBtn');
+  const closeBtn = document.getElementById('closeBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  menuBtn.addEventListener('click', () => {
+    navLinks.style.display = 'block';
+    menuBtn.classList.add('hidden');
+    closeBtn.classList.remove('hidden');
+  });
+
+  closeBtn.addEventListener('click', () => {
+    navLinks.style.display = 'none';
+    closeBtn.classList.add('hidden');
+    menuBtn.classList.remove('hidden');
+  });
+</script>
+<script type="module" src="src/auth.js"></script>
+</body>

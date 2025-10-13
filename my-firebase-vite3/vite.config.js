@@ -14,7 +14,7 @@ export default defineConfig({
         blog: resolve(__dirname, 'blog.html'),
         contact: resolve(__dirname, 'contact.html'),
         english: resolve(__dirname, 'english.html'),
-        FAQs: resolve(__dirname, 'FAQs.html'),
+        FAQs: resolve(__dirname, 'faqs.html'),
         geography: resolve(__dirname, 'geography.html'),
         'life-science': resolve(__dirname, 'life-science.html'),
         math: resolve(__dirname, 'math.html'),
