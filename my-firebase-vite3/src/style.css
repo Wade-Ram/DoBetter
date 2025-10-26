@@ -216,6 +216,66 @@
   border-radius: 12px;
 }
 
+/* Simple rating under CTA */
+.hero-rating {
+  margin-top: 12px; /* space under CTA */
+  margin-right: 53%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: center; /* centered under CTA */
+  font-size: 1rem;
+  color: #ffd166; /* gold stars */
+}
+
+.hero-rating .score {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.hero-rating .para{
+  width: 350px;
+  font-weight: 700;
+  color: white;
+  font-size: 17px;
+}
+
+@media (max-width: 768px) {
+   .hero-rating{
+    margin-right: 5%;
+    display: flex;
+    flex-wrap: wrap;
+   }
+   .hero-rating .stars{
+    margin-left: 9%;
+   }
+   .hero-rating .para{
+    width: 100%;
+    margin-left: 7%;
+   }
+} 
+
+/* Hero outcomes below rating */
+.hero-outcomes {
+  margin-top: 16px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap; /* wraps nicely on mobile */
+  font-size: 0.95rem;
+  color: #fff;
+}
+
+.hero-outcomes .outcome {
+  background: rgba(255,255,255,0.05);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+  min-width: 180px;
+}
+
+
 .why-choose {
   padding: 80px 10%;
   text-align: center;
