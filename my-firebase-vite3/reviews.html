@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>DoBetter | Study Guides and Learning Resources for South African Students</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="public/style.css">
+  <meta name="google-site-verification" content="5bkoyuOuR33lt2BUwFlmSa7g0ejJccxTcntvAwr0zB8" />
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="public/image/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="public/image/favicon.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="DoBetter is your online learning hub for Academic Subjects. Learn smarter, anywhere, anytime.">
+</head>
+<body>
+   <header class="site-header">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="#"><img src="public/image/Confident Logo for Educational Brand (4).png" class="logo"/></a>
+
+    <!-- Menu toggle (mobile only) -->
+    <button class="nav-toggle" id="menuBtn">
+      <img src="image/menu_27dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="menu-bar"/>
+    </button>
+    
+
+    <!-- Navigation Links -->
+    <nav class="navbar" id="navLinks">
+      <button class="nav-toggle hidden" id="closeBtn">
+      <img src="image/close_28dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="close-menu-bar"/>
+      </button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <!--- <li><a href="#">Certificate</a></li> ---Certificate page----> 
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="premium.html">Premium</a></li>
+        <li><a id="user-status" href="profile.html">Not logged in</a></li>
+        <span id="userStatus" class="user-badge">Checking subscription...</span>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<body>
+
+  <h1 class="review-head">🌟 Student Reviews</h1>
+
+  <!-- Review Form -->
+  <form id="reviewForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Your name" required />
+
+    <label for="rating">Rating</label>
+    <select id="rating" required>
+      <option value="5">⭐⭐⭐⭐⭐ (5)</option>
+      <option value="4">⭐⭐⭐⭐ (4)</option>
+      <option value="3">⭐⭐⭐ (3)</option>
+      <option value="2">⭐⭐ (2)</option>
+      <option value="1">⭐ (1)</option>
+    </select>
+
+    <label for="comment">Comment</label>
+    <textarea id="comment" placeholder="Write your feedback..." rows="4" required></textarea>
+
+    <button type="submit" class="review-subbtn">Submit Review</button>
+  </form>
+
+  <!-- Display Reviews -->
+  <div class="reviews" id="reviewsContainer"></div>
+
+  <!-- Firebase SDKs -->
+ 
+   <script type="module" src="src/auth.js"></script>
+   <script type="module" src="src/checkPremium.js"></script>
+   <script type="module" src="src/reviews.js"></script>
+</body>
+</html>

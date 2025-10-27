@@ -597,7 +597,7 @@ body.premium-user .user-badge {
 .main{
   background: linear-gradient(135deg, #0033FF, #FFCCF2);
 }
-.subjects-grid {
+.subjects-grids {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 25px;
@@ -610,7 +610,7 @@ body.premium-user .user-badge {
   color: navy;
 }
 
-.subject-card {
+.subject-cards {
   background: #fff;
   padding: 25px;
   border-radius: 15px;
@@ -619,24 +619,24 @@ body.premium-user .user-badge {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.subject-card:hover {
+.subject-cards:hover {
   transform: translateY(-8px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-.subject-card h3 {
+.subject-cards h3 {
   font-size: 1.6rem;
   color: #4A90E2;
   margin-bottom: 10px;
 }
 
-.subject-card p {
+.subject-cards p {
   font-size: 0.95rem;
   color: #555;
   margin-bottom: 20px;
 }
 
-.subject-card a {
+.subject-cards a {
   display: inline-block;
   text-decoration: none;
   background: #34D399;
@@ -647,7 +647,7 @@ body.premium-user .user-badge {
   transition: background 0.3s ease;
 }
 
-.subject-card a:hover {
+.subject-cards a:hover {
   background: #059669;
 }
 
@@ -698,20 +698,20 @@ body.premium-user .user-badge {
 }*/
 
 /*---------Review----------*/
-.reviews {
+.revieww {
   padding: 80px 10%;
   text-align: center;
   background: linear-gradient(135deg, #0033FF, #FFCCF2);
   color: #00033D;
 }
 
-.reviews h2 {
+.review h2 {
   font-size: 2.8rem;
   margin-bottom: 10px;
   color: #fff;
 }
 
-.reviews p {
+.review p {
   font-size: 1.2rem;
   margin-bottom: 50px;
   color: #fff;
@@ -1755,7 +1755,7 @@ html8, body{
 }
 
 /* Main Share Button */
-.share-button {
+.share-buttons {
   background-color: #007bff;
   color: white;
   border: none;
@@ -1765,7 +1765,7 @@ html8, body{
   cursor: pointer;
   transition: 0.3s ease;
   position: relative;
-  left: 100px;
+  right: 14%;
 }
 
 @media(max-width: 768px){
@@ -1999,15 +1999,7 @@ html8, body{
   font-style: italic;
 }
 
-/* ====== FOOTER ====== */
-.footer {
-  background: #0b3d91;
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 14px;
-  margin-top: 40px;
-}
+
 /* MAIN DASHBOARD */
 .premium-section {
   display: none;
@@ -2081,4 +2073,87 @@ html8, body{
 .resource-item i {
   margin-right: 6px;
   color: #ff5252;
+}
+/* Form Styles */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-top: 12px;
+}
+
+input,
+textarea,
+select,
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+/* Reviews List */
+.reviews {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.review {
+  background: white;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+.review-head{
+  color: white;
+}
+.review-name {
+  font-weight: 600;
+  font-size: 1.1em;
+  color: #111827;
+}
+
+.stars {
+  color: #facc15;
+  font-size: 1.1em;
+  margin-top: 4px;
+}
+
+.review p {
+  color: #374151;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+.review-subbtn{
+  position: relative;
+  right: 14%;
 }

@@ -24,6 +24,7 @@ export default defineConfig({
         subjects: resolve(__dirname, 'subjects.html'),
         termsofservice: resolve(__dirname, 'termsofservice.html'),
         premium: resolve(__dirname, 'premium.html'), // 👈 Add this line
+         reviews: resolve(__dirname, 'reviews.html'), // Add this line
       }
     }
   }
