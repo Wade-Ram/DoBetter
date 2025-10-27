@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>DoBetter | Study Guides and Learning Resources for South African Students</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="public/style.css">
+  <meta name="google-site-verification" content="5bkoyuOuR33lt2BUwFlmSa7g0ejJccxTcntvAwr0zB8" />
+  <!-- Font Awesome CDN for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="icon" href="public/image/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="public/image/favicon.png">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="DoBetter is your online learning hub for Academic Subjects. Learn smarter, anywhere, anytime.">
+</head>
+<body>
+   <header class="site-header">
+  <div class="nav-container">
+    <!-- Logo -->
+    <a href="#"><img src="public/image/Confident Logo for Educational Brand (4).png" class="logo"/></a>
+
+    <!-- Menu toggle (mobile only) -->
+    <button class="nav-toggle" id="menuBtn">
+      <img src="image/menu_27dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="menu-bar"/>
+    </button>
+    
+
+    <!-- Navigation Links -->
+    <nav class="navbar" id="navLinks">
+      <button class="nav-toggle hidden" id="closeBtn">
+      <img src="image/close_28dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="close-menu-bar"/>
+      </button>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="subjects.html">Subjects</a></li>
+        <!--- <li><a href="#">Certificate</a></li> ---Certificate page----> 
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="profile.html">Profile</a></li>
+        <li><a id="user-status" href="profile.html">Not logged in</a></li>
+        <span id="userStatus" class="user-badge">Checking subscription...</span>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+  <!-- MAIN CONTENT -->
+  <main class="upgrade-section">
+    <section class="hero">
+      <h1>Unlock Your Full Potential with <span>DoBetter Premium</span> 💎</h1>
+      <p>Get access to exclusive lessons, guides, videos, and tools to help you achieve academic excellence.</p>
+    </section>
+
+    <section class="comparison">
+      <div class="plan free-plan">
+        <h2>Free Plan</h2>
+        <ul>
+          <li>📘 Limited study materials</li>
+          <li>⏱ Basic quizzes</li>
+          <li>📅 Limited subjects</li>
+          <li>❌ No video lessons</li>
+          <li>❌ No premium support</li>
+        </ul>
+        <button class="disabled-btn" disabled>Current Plan</button>
+      </div>
+
+      <div class="plan premium-plan">
+        <h2>Premium Plan</h2>
+        <ul>
+          <li>📚 Full access to all subjects</li>
+          <li>🎥 Exclusive video lessons</li>
+          <li>🧠 Practice exams & advanced quizzes</li>
+          <li>💬 Direct support from tutors</li>
+          <li>🏆 Certificates & rewards</li>
+        </ul>
+        <div class="price-tag">R175 / month</div>
+        <button id="payNowBtn" class="upgrade-btn">Upgrade Now</button>
+      </div>
+    </section>
+
+    <section class="payment-placeholder">
+      <h3>💳 Payment Options</h3>
+      <p>Payment gateway integration coming soon. You’ll be able to pay via:</p>
+      <div class="payment-logos">
+        <img src="public/image/payfast-placeholder.png" alt="PayFast" />
+        <img src="public/image/visa-placeholder.png" alt="PayPal" />
+        <img src="public/image/mastercard-placeholder.png" alt="MasterCard" />
+      </div>
+      <p class="coming-soon">🔔 Stay tuned! Premium access will open shortly.</p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>&copy; 2025 DoBetter. All Rights Reserved.</p>
+  </footer>
+
+  <!-- JS -->
+  <script type="module">
+    import { auth, db } from "./src/firebase.js";
+    import { onAuthStateChanged } from "firebase/auth";
+    import { doc, getDoc } from "firebase/firestore";
+
+    const userStatus = document.getElementById("userStatus");
+    const payNowBtn = document.getElementById("payNowBtn");
+
+    async function isPremiumUser(userId) {
+      const subRef = doc(db, "subscriptions", userId);
+      const subSnap = await getDoc(subRef);
+      return subSnap.exists() && subSnap.data().active;
+    }
+
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const premium = await isPremiumUser(user.uid);
+        if (premium) {
+          userStatus.textContent = "💎 Premium Member";
+          payNowBtn.disabled = true;
+          payNowBtn.textContent = "Already Premium";
+        } else {
+          userStatus.textContent = "🔓 Free User";
+        }
+      } else {
+        userStatus.textContent = "🚪 Please Sign In";
+      }
+    });
+
+    payNowBtn.addEventListener("click", () => {
+      alert("Payment gateway coming soon!");
+    });
+  </script>
+</body>
+</html>

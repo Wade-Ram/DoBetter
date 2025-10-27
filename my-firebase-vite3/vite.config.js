@@ -23,6 +23,7 @@ export default defineConfig({
         'signup-login': resolve(__dirname, 'signup-login.html'),
         subjects: resolve(__dirname, 'subjects.html'),
         termsofservice: resolve(__dirname, 'termsofservice.html'),
+        premium: resolve(__dirname, 'premium.html'), // 👈 Add this line
       }
     }
   }

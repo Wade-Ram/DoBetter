@@ -11,7 +11,8 @@ async function isPremiumUser(userId) {
 
 // 🔥 Listen for user login status
 onAuthStateChanged(auth, async (user) => {
-  const statusEl = document.getElementById("userStatus"); // ✅ Get the element from HTML
+  const statusEl = document.getElementById("userStatus"); // ✅ Status text
+  const goPremiumBtn = document.getElementById("goPremiumBtn"); // ✅ The button
 
   if (user) {
     const premium = await isPremiumUser(user.uid);
@@ -20,29 +21,27 @@ onAuthStateChanged(auth, async (user) => {
       console.log("✅ Premium user! Full access granted.");
       document.body.classList.add("premium-user");
 
-      // ✅ Add this here (updates text for Premium)
-      if (statusEl) {
-        statusEl.textContent = "💎 Premium Member";
-      }
+      if (statusEl) statusEl.textContent = "💎 Premium Member";
+
+      // 🔹 Hide the Go Premium button
+      if (goPremiumBtn) goPremiumBtn.style.display = "none";
 
     } else {
-      console.log("🚫 Not premium. Hide premium content or show upgrade button.");
+      console.log("🚫 Not premium. Show upgrade option.");
       document.body.classList.remove("premium-user");
 
-      // ✅ Add this here (updates text for Free)
-      if (statusEl) {
-        statusEl.textContent = "🔒 Free User Upgrade for R175/month";
-      }
+      if (statusEl) statusEl.textContent = "🔒 Free User - Upgrade for R175/month";
+
+      // 🔹 Show the Go Premium button
+      if (goPremiumBtn) goPremiumBtn.style.display = "inline-block";
     }
 
   } else {
     console.log("No user logged in.");
 
-    // 👇 Add this to show message on the website
-    const statusEl = document.getElementById("userStatus");
-    if (statusEl) {
-      statusEl.textContent = "🔑 Please sign in to access DoBetter";
-    }
+    if (statusEl) statusEl.textContent = "🔑 Please sign in to access DoBetter";
 
+    // 🔹 Show the Go Premium button even if not logged in (so they can click it)
+    if (goPremiumBtn) goPremiumBtn.style.display = "inline-block";
   }
 });

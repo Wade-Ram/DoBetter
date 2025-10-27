@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>DoBetter Premium | Exclusive Access</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="public/style.css">
+  <link rel="icon" href="public/image/favicon.png" type="image/png">
+  <meta name="theme-color" content="#0b3d91">
+  <meta name="description" content="DoBetter Premium gives students exclusive access to advanced notes, video lessons, and exam prep materials.">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="index.html"><img src="public/image/Confident Logo for Educational Brand (4).png" class="logo"/></a>
+
+      <button class="nav-toggle" id="menuBtn">
+        <img src="image/menu_27dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="menu-bar"/>
+      </button>
+
+      <nav class="navbar" id="navLinks">
+        <button class="nav-toggle hidden" id="closeBtn">
+          <img src="image/close_28dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" alt="close-menu-bar"/>
+        </button>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="subjects.html">Subjects</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="profile.html">Profile</a></li>
+          <li><a href="premium.html" class="active">Premium</a></li>
+          <span id="userStatus" class="user-badge">Checking subscription...</span>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PREMIUM SECTION -->
+  <main class="premium-container">
+    <div id="lockedMsg" class="locked-section">
+      <h2>🔒 Premium Content Locked</h2>
+      <p>Upgrade for <strong>R175/month</strong> to unlock all premium study materials, exclusive lessons, and more.</p>
+      <button id="upgradeBtn" class="upgrade-btn">Upgrade Now</button>
+    </div>
+
+    <div id="premiumSection" class="premium-section">
+      <h1>💎 Welcome to DoBetter Premium</h1>
+      <p>You're now part of our elite learning club! Access everything below:</p>
+      <div class="premium-grid">
+        <div class="premium-card">
+          <i class="fas fa-book-open"></i>
+          <h3>Advanced Study Guides</h3>
+          <p>Access deeper explanations and key insights for top marks.</p>
+        </div>
+
+        <div class="premium-card">
+          <i class="fas fa-video"></i>
+          <h3>Video Lessons</h3>
+          <p>Watch guided tutorials from subject experts anytime, anywhere.</p>
+        </div>
+
+        <div class="premium-card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Exam Strategies</h3>
+          <p>Learn proven tactics to boost confidence and performance in tests.</p>
+        </div>
+
+        <div class="premium-card">
+          <i class="fas fa-download"></i>
+          <h3>Downloadable Resources</h3>
+          <p>Get exclusive notes and practice materials in PDF format.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+  <!-- Firebase + Script -->
+  <script type="module">
+    import { auth, db } from "./src/firebase.js";
+    import { onAuthStateChanged } from "firebase/auth";
+    import { doc, getDoc } from "firebase/firestore";
+
+    const userStatus = document.getElementById("userStatus");
+    const lockedMsg = document.getElementById("lockedMsg");
+    const premiumSection = document.getElementById("premiumSection");
+
+    async function isPremiumUser(userId) {
+      const subRef = doc(db, "subscriptions", userId);
+      const subSnap = await getDoc(subRef);
+      return subSnap.exists() && subSnap.data().active;
+    }
+
+    onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        const premium = await isPremiumUser(user.uid);
+        if (premium) {
+          userStatus.textContent = "💎 Premium Member";
+          lockedMsg.style.display = "none";
+          premiumSection.style.display = "block";
+        } else {
+          userStatus.textContent = "🔒 Free User";
+          lockedMsg.style.display = "block";
+          premiumSection.style.display = "none";
+        }
+      } else {
+        userStatus.textContent = "🚪 Please Sign In";
+        lockedMsg.style.display = "block";
+        premiumSection.style.display = "none";
+      }
+    });
+
+    document.getElementById("upgradeBtn").addEventListener("click", () => {
+      alert("Premium payments coming soon! Stay tuned.");
+    });
+  </script>
+
+  <script>
+  document.getElementById("upgradeBtn").addEventListener("click", () => {
+  window.location.href = "upgrade.html";
+});
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</body>
+</html>
