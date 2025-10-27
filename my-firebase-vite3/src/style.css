@@ -105,6 +105,43 @@
   }
 }
 
+/* USER STATUS BADGE */
+/* === USER STATUS BADGE IN NAV === */
+.user-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #4b6cb7, #182848);
+  color: #fff;
+  font-size: 0.5rem;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  width: 50%;
+}
+
+/* When user is premium */
+body.premium-user .user-badge {
+  background: linear-gradient(135deg, #ffd700, #ffae00);
+  color: #222;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+/* Responsive nav fix (mobile menu) */
+@media (max-width: 768px) {
+  .user-badge {
+    display: block;
+    text-align: center;
+    margin: 10px auto;
+    width: 50%;
+  }
+}
+
+
 /* ========== HERO SECTION ========== */
 .hero {
   display: flex;
