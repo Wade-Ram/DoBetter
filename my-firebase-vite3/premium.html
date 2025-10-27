@@ -46,7 +46,7 @@
       <button id="upgradeBtn" class="upgrade-btn">Upgrade Now</button>
     </div>
 
-    <div id="premiumSection" class="premium-section">
+    <div id="premiumInfo" class="premium-section">
       <h1>💎 Welcome to DoBetter Premium</h1>
       <p>You're now part of our elite learning club! Access everything below:</p>
       <div class="premium-grid">
@@ -75,8 +75,14 @@
         </div>
       </div>
     </div>
-  </main>
 
+    <section id="premiumSection" class="premium-section">
+      <h1>💎 Premium Subjects</h1>
+      <p>Welcome to your exclusive resources — choose any subject below:</p>
+      <div id="subjectsContainer" class="subjects-grid"></div>
+    </section>
+
+  </main>
 
 
   <!-- Firebase + Script -->
@@ -119,12 +125,14 @@
     });
   </script>
 
+
+  <script type="module" src="src/premium-content.js"></script>
+
   <script>
   document.getElementById("upgradeBtn").addEventListener("click", () => {
   window.location.href = "upgrade.html";
 });
   </script>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
 </body>
 </html>
